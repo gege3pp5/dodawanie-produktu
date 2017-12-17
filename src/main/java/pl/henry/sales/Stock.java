@@ -9,9 +9,9 @@ public class Stock {
     this.productQuantities = new HashMap<>();
   }
 
-  public int put(Product product, int quantity) {
-    int newQuantity = getQuantity(product.getName()) + quantity; 
-    productQuantities.put(product.getName(), newQuantity);
+  public int put(String productName, int quantity) {
+    int newQuantity = getQuantity(productName) + quantity; 
+    productQuantities.put(productName, newQuantity);
     return newQuantity;
   }
 
