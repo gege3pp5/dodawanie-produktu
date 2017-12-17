@@ -12,11 +12,11 @@ public class Basket {
   }
 
   public int put(String productName, int quantity) throws ProductNotAvailableException {
-    if(quantity > stock.getQuantity(productName))
-      throw new ProductNotAvailableException();
     int newQuantity = getQuantity(productName) + quantity;
     if(newQuantity < 0)
       newQuantity = 0;      
+    if(newQuantity > stock.getQuantity(productName))
+      throw new ProductNotAvailableException();
     productQuantities.put(productName, newQuantity);
     return newQuantity;
   }
